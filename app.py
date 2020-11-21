@@ -40,7 +40,7 @@ async def reflect(event):
 
         to_gg_sheets.append_record([q_1,q_2,q_3])
 
-@aiocron.crontab('2 12 * * *')
+@aiocron.crontab('1 20 * * *')
 async def attime():
 
     entity = await bot.get_entity(349435141)

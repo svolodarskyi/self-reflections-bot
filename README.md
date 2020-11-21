@@ -5,12 +5,9 @@ As well as send quote of teh day after self-reflections exercise.
 
 # Installation
 
-1. Install additional libraries:
- - pip install requests
- - pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
- - pip install python-dotenv
- - pip install telethon
- - pip install aiocron
+ 1. Install additional libraries:
+
+    pip install requirements.txt 
  
  2. Register Telegram account. Create bot with @botfather bot. Follow the directions.
  

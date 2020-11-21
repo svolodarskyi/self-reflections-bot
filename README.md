@@ -12,7 +12,7 @@ As well as send quote of teh day after self-reflections exercise.
  - pip install telethon
  - pip install aiocron
  
- 2. Register Telegram account. Create bot with @botfather bot.
+ 2. Register Telegram account. Create bot with @botfather bot. Follow the directions.
  
  3. Set up google develope account.
  
@@ -24,3 +24,5 @@ As well as send quote of teh day after self-reflections exercise.
   - API_ID
   - API_HASH
   - SPREADSHEET_ID
+
+Cheers!

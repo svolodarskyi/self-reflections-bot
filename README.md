@@ -1,2 +1,3 @@
 # self-reflections-bot
-telegram bot which reminds to go over self-reflection questions every day
+Telegram bot which reminds to go over self-reflection questions every day.
+As well as send quote of teh day after self-reflections exercise.

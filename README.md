@@ -8,7 +8,7 @@ As well as send quote of teh day after self-reflections exercise.
 1. Install additional libraries:
  - pip install requests
  - pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
- - pip install dotenv
+ - pip install python-dotenv
  - pip install telethon
  - pip install aiocron
  

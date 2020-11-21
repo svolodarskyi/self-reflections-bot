@@ -16,7 +16,7 @@ As well as send quote of teh day after self-reflections exercise.
  
  3. Set up google develope account.
  
- Check this video on how to get started https://www.youtube.com/watch?v=4ssigWmExak
+    Check this video on how to get started https://www.youtube.com/watch?v=4ssigWmExak
  
  3. Create file .env with teh following variables:
  

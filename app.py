@@ -15,12 +15,13 @@ API_HASH = os.getenv('API_HASH')
 
 bot = TelegramClient('self_reflect_bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
-time = '22 12 * * *'
+time = '07 13 * * *'
+
 
 @bot.on(events.NewMessage(pattern='/start'))
 async def start(event):
     """Send a message when the command /start is issued."""
-    await event.respond('Right now the reminder is set to 8:00 pm')
+    await event.respond('Right now the reminder is set to 8:02 pm')
     raise events.StopPropagation
  
 @bot.on(events.NewMessage(pattern="Yup"))
@@ -29,17 +30,17 @@ async def reflect(event):
 
     questions = [
                     'Lesson of the day?',
-                    'One thing I want to change?'
+                    'One thing I want to change?',
                     'Am I getting closer to my goals?',
                 ]
 
     answers = []
 
     async with bot.conversation(event.chat_id) as conv:
-
-        for i in range(3):
-            await conv.send_message(questions[i])
-            answers[i] = (await conv.get_response()).raw_text
+      
+        for _ in range(3):
+            await conv.send_message(questions[_])
+            answers.append((await conv.get_response()).raw_text)
 
         await conv.send_message('Well done!')
         await conv.send_message(f'Quote of the day: \n{quotes.get_quote()}')

@@ -1,7 +1,7 @@
 # Self-Reflections-Bot
 Telegram bot which reminds to go over self-reflection questions every day.
 
-As well as send quote of the day after self-reflections exercise.
+In additiona, sends quote of the day after self-reflections exercise.
 
 # Installation
 

@@ -13,11 +13,16 @@ In additiona, sends quote of the day after self-reflections exercise.
  
  3. Set up Dropbox developer account.
  
- 3. Create file .env with teh following variables:
+ 4. Create file .env with teh following variables:
  
   - BOT_TOKEN_
   - API_ID
   - API_HASH
   - DROPBOX_ACCESS_TOKEN
 
+ 5. Upcoming features:
+  - setting reminder time
+  - changing self-reflection questions
+  - setting number of self reflection questions
+    
 Cheers!

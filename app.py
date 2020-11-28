@@ -1,10 +1,11 @@
 from telethon import TelegramClient, events, sync, Button
 from telethon.tl.types import InputPeerChat
 import aiocron
-import to_gg_sheets
-import quotes
 from dotenv import load_dotenv
 import os
+
+import quotes
+import to_dropbox
 
 load_dotenv()
 
@@ -14,6 +15,7 @@ API_HASH = os.getenv('API_HASH')
 
 bot = TelegramClient('self_reflect_bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
+time = '22 12 * * *'
 
 @bot.on(events.NewMessage(pattern='/start'))
 async def start(event):
@@ -25,22 +27,26 @@ async def start(event):
 @bot.on(events.NewMessage(pattern="/doit"))
 async def reflect(event):
 
-    async with bot.conversation(event.chat_id) as conv:
-        await conv.send_message('Lesson of the day?')
-        q_1 = (await conv.get_response()).raw_text
+    questions = [
+                    'Lesson of the day?',
+                    'One thing I want to change?'
+                    'Am I getting closer to my goals?',
+                ]
 
-        await conv.send_message('One thing I want to change?')
-        q_2 = (await conv.get_response()).raw_text
-        
-        await conv.send_message('Am I getting closer to my goals?')
-        q_3 = (await conv.get_response()).raw_text
+    answers = []
+
+    async with bot.conversation(event.chat_id) as conv:
+
+        for i in range(3):
+            await conv.send_message(questions[i])
+            answers[i] = (await conv.get_response()).raw_text
 
         await conv.send_message('Well done!')
-        await conv.send_message(f'Quote of the day: \n {quotes.get_quote()}')
+        await conv.send_message(f'Quote of the day: \n{quotes.get_quote()}')
 
-        to_gg_sheets.append_record([q_1,q_2,q_3])
+        to_dropbox.upload_note(questions, answers)
 
-@aiocron.crontab('1 20 * * *')
+@aiocron.crontab(time)
 async def attime():
 
     entity = await bot.get_entity(349435141)

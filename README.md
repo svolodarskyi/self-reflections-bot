@@ -11,15 +11,13 @@ As well as send quote of the day after self-reflections exercise.
  
  2. Register Telegram account. Create bot with @botfather bot. Follow the directions.
  
- 3. Set up google develope account.
- 
-    Check [this youtube video](https://www.youtube.com/watch?v=4ssigWmExak) on how to get started with Google Sheets API.
+ 3. Set up Dropbox developer account.
  
  3. Create file .env with teh following variables:
  
   - BOT_TOKEN_
   - API_ID
   - API_HASH
-  - SPREADSHEET_ID
+  - DROPBOX_ACCESS_TOKEN
 
 Cheers!
